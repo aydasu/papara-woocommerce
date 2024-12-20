@@ -185,8 +185,8 @@ class Papara_Payment extends WC_Payment_Gateway
         // posting request for payment record
         $response = wp_remote_post($environment_url,$args);
 
-        // mixed return; will return the result on success, FALSE on failure.
-        if ($response === false) {
+        // mixed return; will return the result on success, WP_Error on failure.
+        if (is_wp_error($response)) {
             $order->update_status('failed');
             die("post error");
         }
