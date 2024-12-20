@@ -148,7 +148,7 @@ class Papara_Payment extends WC_Payment_Gateway
         $order = new WC_Order($order_id);
 
         // deciding whether in test mode or not
-        $environment_url = ($this -> get_option('environment') == 'TRUE') ? 'https://merchant-api.papara.com/payments' : 'https://merchantapi-test-master.papara.com/payments';
+        $environment_url = ($this -> get_option('environment') == 'TRUE') ? 'https://merchant-api.papara.com/payments' : 'https://merchant-api.test.papara.com/payments';
 
         // retriving product names in order to show in payment page
         $description = '| ';
